@@ -10,10 +10,12 @@ let b = 0;
 function setup() {
   createCanvas(500, 500);
   background(0, 0, 0);
+  drawElipse1();
+  drawElipse2();
+  drawElipse3();
 }
 
-function draw() {
-  //elipse 1
+function drawElipse1() {
   push();
   width = 10;
   height = 10;
@@ -21,8 +23,8 @@ function draw() {
   noStroke();
   ellipse(x + 75, y + 10, width, height);
   pop();
-
-  //elipse 2
+}
+function drawElipse2() {
   push();
   width = 60;
   height = 60;
@@ -30,8 +32,9 @@ function draw() {
   noStroke();
   ellipse(x + 140, y + 30, width, height);
   pop();
+}
 
-  //elipse 3
+function drawElipse3() {
   push();
   width = 150;
   height = 150;

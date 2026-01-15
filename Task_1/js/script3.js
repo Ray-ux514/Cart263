@@ -40,7 +40,7 @@ function draw() {
   noStroke();
   square(r2x, r2y, R2_Size);
 
-  // Update rect 3 each frame
+  // Update rect 3
   r3y = r3y + R3_SPEED;
 
   // If rect 3 hits bottom, move it back to top

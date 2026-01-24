@@ -6,7 +6,7 @@ const R1_colour = "#800080";
 
 // Rect 2 (size + color)
 const R2_Size = 60;
-const R2_colour = "#800080";
+const R2_colour = "#FFC0CB";
 
 // Rect 3 (size + color)
 const R3_Size = 80;

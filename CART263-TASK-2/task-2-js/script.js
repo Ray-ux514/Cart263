@@ -4,49 +4,50 @@ window.onload = setup;
 function setup() {
   console.log("we are a go!");
   /*** ALL ANWSERS TO BE ADDED IN THE ALLOCATED SPACE */
-  /*** START PART ONE ACCESS */
-  /* 1: all paragraph elements */
-  /***CODE */
-  /***OUTPUT:
-   *
-   */
+
+  const allParagraphs = document.querySelectorAll("p");
+  console.log(allParagraphs);
+  // Output: NodeList(#) [p, p, p, ...]
 
   /*************************************** */
   /* 2: only the first paragraph element */
-  /***CODE */
-  /***OUTPUT:
-   *
-   */
+  const firstParagraph = document.querySelector("p");
+  console.log(firstParagraph);
+  // Output: <p>...</p>  (the first <p> element)
 
   /*************************************** */
   /* 3: all elements with the class inner-container */
-  /***CODE */
-  /***OUTPUT:
-   *
-   */
+  const innerContainers = document.querySelectorAll(".inner-container");
+  console.log(innerContainers);
+  // Output: NodeList(#) [element.inner-container, element.inner-container, ...]
 
   /*************************************** */
   /* 4: the last image element inside the element that has the class img-container */
-  /***CODE */
-  /***OUTPUT:
-   *
-   */
+  const imgContainer = document.querySelector(".img-container");
+  const imgContainerImages = document.querySelectorAll(".img-container img");
+  const lastImgInContainer = imgContainerImages[imgContainerImages.length - 1];
 
-  /*************************************** */
-  /* 5A: all h2 elements */
-  /* 5B: length of the list in 5A */
-  /* 5C: the text content of the first element in the list from 5A */
-  /***CODE */
-  /***OUTPUT:
-   *
-   */
+  console.log(lastImgInContainer);
+  // Output: <img ...> (the last <img> inside .img-container)
 
-  /*************************************** */
-  /* 6: the element with id name parent */
-  /***CODE */
-  /***OUTPUT:
-   *
-   */
+  const allH2s = document.querySelectorAll("h2");
+  console.log(allH2s);
+  // Output: NodeList(#) [h2, h2, h2, ...]
+
+  /* 5(B) Select length of list in 5(A) */
+  const h2Count = allH2s.length;
+  console.log(h2Count);
+  // Output: #  (number of <h2> elements)
+
+  /* 5(C) Select the text content of the first element in the list from 5(A) */
+  const firstH2Text = allH2s[0].textContent;
+  console.log(firstH2Text);
+  // Output: "..." (text inside the first <h2>)
+
+  /* 6) Select the element with the id parent */
+  const parentEl = document.querySelector("#parent");
+  console.log(parentEl);
+  // Output: <... id="parent">...</...>
 
   /*************************************** */
   /*** END PART ONE ACCESS */

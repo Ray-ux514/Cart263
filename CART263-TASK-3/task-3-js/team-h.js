@@ -17,7 +17,7 @@ function setup_H() {
    * i.e. you want to create a custom div class and you are in "Team_A" then call your class TEAM_A_ANI_A_Div -
    * this is so that your styles are not overriden by other teams.
    * NOTE::: All your code is to be added here inside this function  -
-   * remember you can define other functions inside....
+   * remember you can define other functions  inside....
    * Do not change any code above or the HTML markup.
    * **/
 
@@ -275,12 +275,13 @@ function setup_H() {
         ellipse.setAttribute("ani-dir", "1");
         ellipse.setAttribute("ani-go", "false");
         arrayOfellipses.push(ellipse);
-        setTimeout(function(){ellipse.setAttribute("ani-go","true")},Math.random()*5000)
+        setTimeout(function () {
+          ellipse.setAttribute("ani-go", "true");
+        }, Math.random() * 5000);
       }
     }
 
-  requestAnimationFrame(animate)
-
+    requestAnimationFrame(animate);
 
     /****** callback for requestAnimationFrame **********/
     function animate() {

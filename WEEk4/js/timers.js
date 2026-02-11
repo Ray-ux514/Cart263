@@ -48,40 +48,40 @@ window.onload = function () {
   //    gridCells[i].style.background = shades[currentShadeindex];
   // }
 
-  //let changingDivisor = 0;
-  // let ref = window.setInterval(animate_rows, 500);
-  //window.setInterval(animate_rows, 100);
-  //function animate_rows() {
-  // changingDivisor += 1;
-  // console.log(changingDivisor);
-  // drawGrid();
-  // if (changingDivisor === 12) {
-  //   clearInterval(ref);
-  //  }
-  // }
+  let changingDivisor = 0;
+  let ref = window.setInterval(animate_rows, 500);
+  window.setInterval(animate_rows, 100);
+  function animate_rows() {
+    changingDivisor += 1;
+    console.log(changingDivisor);
+    drawGrid();
+    if (changingDivisor === 12) {
+      clearInterval(ref);
+    }
+  }
 
-  //function drawGrid() {
-  //  for (let index = 0; index < gridCells.length; index++) {
-  //    //check what the remainder is ...
-  //    if (index % changingDivisor === 0) {
-  //      gridCells[index].style.background = shades[0];
-  //    } else if (index % changingDivisor === 1) {
-  //     gridCells[index].style.background = shades[1];
-  //    } else if (index % changingDivisor === 2) {
-  //     gridCells[index].style.background = shades[2];
-  //    } else if (index % changingDivisor === 3) {
-  //       gridCells[index].style.background = shades[3];
-  //    } else if (index % changingDivisor === 4) {
-  //      gridCells[index].style.background = shades[4];
-  //    } else if (index % changingDivisor === 5) {
-  //   gridCells[index].style.background = shades[5];
-  //  } else if (index % changingDivisor === 6) {
-  //     gridCells[index].style.background = shades[6];
-  //    } else if (index % changingDivisor === 7) {
-  //     gridCells[index].style.background = shades[7];
-  //     }
-  //   }
-  // }
+  function drawGrid() {
+    for (let index = 0; index < gridCells.length; index++) {
+      //check what the remainder is ...
+      if (index % changingDivisor === 0) {
+        gridCells[index].style.background = shades[0];
+      } else if (index % changingDivisor === 1) {
+        gridCells[index].style.background = shades[1];
+      } else if (index % changingDivisor === 2) {
+        gridCells[index].style.background = shades[2];
+      } else if (index % changingDivisor === 3) {
+        gridCells[index].style.background = shades[3];
+      } else if (index % changingDivisor === 4) {
+        gridCells[index].style.background = shades[4];
+      } else if (index % changingDivisor === 5) {
+        gridCells[index].style.background = shades[5];
+      } else if (index % changingDivisor === 6) {
+        gridCells[index].style.background = shades[6];
+      } else if (index % changingDivisor === 7) {
+        gridCells[index].style.background = shades[7];
+      }
+    }
+  }
   /*
   window.setTimeout(changingTimeout, dynamicdelay);
 

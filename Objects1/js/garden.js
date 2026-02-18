@@ -1,46 +1,26 @@
-window.onload = function () {
-  // Our garden
-  let garden = {
-    // An array to store the individual flowers
-    flowers: [],
-    // How many flowers in the garden
-    numFlowers: 20,
+"use strict";
 
-    /*grass object */
+let garden; // global
+
+window.onload = function () {
+  garden = {
+    flowers: [],
+    numFlowers: 20,
     grass: {
-      // The color of the grass (background)
-      grassColor: {
-        r: 120,
-        g: 180,
-        b: 120,
-      },
-      //the grass element
+      grassColor: { r: 120, g: 180, b: 120 },
       grassDiv: document.createElement("div"),
     },
-
-    /*sky object */
     sky: {
-      // The color of the sky (background)
-      skyColor: {
-        r: 83,
-        g: 154,
-        b: 240,
-      },
-      //the sky element
+      skyColor: { r: 83, g: 154, b: 240 },
       skyDiv: document.createElement("div"),
     },
-
-    /*sun object */
     sun: {
-      sunColor: {
-        r: 240,
-        g: 206,
-        b: 83,
-      },
-      //the sun element
+      sunColor: { r: 240, g: 206, b: 83 },
       sunDiv: document.createElement("div"),
     },
   };
+
+  createAndRenderTheGarden(); // call AFTER garden exists
 };
 
 function createAndRenderTheGarden() {
@@ -72,6 +52,14 @@ function createAndRenderTheGarden() {
       ${garden.grass.grassColor.b}
       )`;
   document.getElementsByTagName("main")[0].appendChild(garden.grass.grassDiv);
+  // add numFlowers at one time
+  for (let i = 0; i < garden.numFlowers; i++) {
+    garden.flowers.push(createFlower());
+  }
+
+  for (let i = 0; i < garden.flowers.length; i++) {
+    renderFlower(garden.flowers[i]);
+  }
 }
 /* render the sun, sky and grass*/
 createAndRenderTheGarden();

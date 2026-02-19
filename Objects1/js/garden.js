@@ -18,6 +18,9 @@ window.onload = function () {
       sunColor: { r: 240, g: 206, b: 83 },
       sunDiv: document.createElement("div"),
     },
+
+    numDogs: 10,
+    dogs: [],
   };
 
   createAndRenderTheGarden(); // call AFTER garden exists
@@ -61,5 +64,33 @@ function createAndRenderTheGarden() {
     renderFlower(garden.flowers[i]);
   }
 }
+// Create the correct number of dogs and put them in our array
+for (let i = 0; i < garden.numDogs; i++) {
+  let x = Math.random() * window.innerWidth;
+  let y = Math.random() * 100;
+  let dog = new Dog(x, y, 15, 15);
+  garden.dogs.push(dog);
+}
+
+function renderAnimal() {
+  // Go through all the animals and move, wrap, and display them
+  for (let i = 0; i < garden.dogs.length; i++) {
+    let dog = garden.dogs[i];
+    dog.renderAnimal();
+  }
+}
+
+function updateGarden() {
+  // Go through all the animals and move, wrap, and display them
+  for (let i = 0; i < garden.dogs.length; i++) {
+    let dog = garden.dogs[i];
+    dog.move();
+    dog.wrap();
+  }
+  window.requestAnimationFrame(updateGarden);
+}
+
 /* render the sun, sky and grass*/
 createAndRenderTheGarden();
+renderAnimal();
+window.requestAnimationFrame(updateGarden);

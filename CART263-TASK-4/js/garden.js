@@ -1,6 +1,6 @@
-window.onload = function (){
-// Our garden
-let garden = {
+window.onload = function () {
+  // Our garden
+  let garden = {
     // An array to store the individual flowers
     flowers: [],
     // How many flowers in the garden
@@ -16,7 +16,7 @@ let garden = {
       //the grass element
       grassDiv: document.createElement("div"),
     },
- 
+
     /*sky object */
     sky: {
       // The color of the sky (background)
@@ -30,7 +30,7 @@ let garden = {
     },
   };
   // new  sun instancce
-  let sun =  new Sun(10,10,{r: 240, g: 206,b: 83})
+  let sun = new Sun(10, 10, { r: 240, g: 206, b: 83 });
 
   function createAndRenderTheGarden() {
     /* note how we use dot notation....*/
@@ -48,33 +48,32 @@ let garden = {
 
     //create some flowers
     for (let i = 0; i < garden.numFlowers; i++) {
-        // Create variables for our arguments for clarity
-        let x = Math.random() * (window.innerWidth);
-        let y = Math.random() * 120;
-        let size = Math.random() * 30 + 10;
-        let stemLength = Math.random() * 50 + 20;
-        let petalColor = {
-          r: parseInt(Math.random() * 155) + 100,
-          g: parseInt(Math.random() * 155) + 100,
-          b: parseInt(Math.random() * 155) + 100,
-        };
-  
-        // Create a new flower using the arguments
-        let flower = new Flower(x, y, size, stemLength, petalColor);
-        // Add the flower to the array of flowers
-        garden.flowers.push(flower);
-      }
+      // Create variables for our arguments for clarity
+      let x = Math.random() * window.innerWidth;
+      let y = Math.random() * 120;
+      let size = Math.random() * 30 + 10;
+      let stemLength = Math.random() * 50 + 20;
+      let petalColor = {
+        r: parseInt(Math.random() * 155) + 100,
+        g: parseInt(Math.random() * 155) + 100,
+        b: parseInt(Math.random() * 155) + 100,
+      };
 
-      for (let i = 0; i < garden.numFlowers; i++) {
-        // Add the flower to the array of flowers
-        garden.flowers[i].renderFlower();
-      }
+      // Create a new flower using the arguments
+      let flower = new Flower(x, y, size, stemLength, petalColor);
+      // Add the flower to the array of flowers
+      garden.flowers.push(flower);
+    }
+
+    for (let i = 0; i < garden.numFlowers; i++) {
+      // Add the flower to the array of flowers
+      garden.flowers[i].renderFlower();
+    }
   }
   createAndRenderTheGarden();
-}
+};
 
-  
-  /*** TEAM A AND B NEED TO COORDINATE
+/*** TEAM A AND B NEED TO COORDINATE
   
   /**TEAM A -- BEES
  * 1/ Create a  file to hold a  Bee Class (i.e. Bee.js)
@@ -99,7 +98,7 @@ let garden = {
   *
 */
 
-  /*** TEAM C AND D NEED TO COORDINATE
+/*** TEAM C AND D NEED TO COORDINATE
 
 /**TEAM C -- SQUIRRELS
  * 1/ Create a file to hold a Squirrel Class (i.e. Squirrel.js)
@@ -126,8 +125,7 @@ let garden = {
  * 
 */
 
-
-  /*** TEAM E AND F NEED TO COORDINATE
+/*** TEAM E AND F NEED TO COORDINATE
 
 /** TEAM E BIRDS
  * 1/ Create a  file to hold a  Bird Class (i.e. Bird.js)
@@ -142,8 +140,7 @@ let garden = {
  * 
 */
 
- 
-  /**TEAM F -- Weather
+/**TEAM F -- Weather
  * 1/ Create a file to hold a Weather Class (i.e. Weather.js)
  * 2/ Create the Weather Class : a constructor which takes at LEAST 2 properties: weather "state" i.e. sunny, raining, cloudy as well as a variable to hold the current temp
  * 3/ Create a renderWeather() method -> which essentially will call one of a few custom methods to render the current weather:
@@ -152,5 +149,5 @@ let garden = {
  * 5/ In garden.js instantiate a weather state + add the current temperature.
  * 6/ Implement the functionality such that at different time intervals the weather changes and or the temperature.
  * 7/ Ensure and Implement the functionality for the birds (collab with TEAM E) to be affected by the current weather and temperature.
- * 
-*/
+ *
+ */

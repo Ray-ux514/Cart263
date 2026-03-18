@@ -36,6 +36,6 @@ animate();
 document.addEventListener("keydown", (event) => {
   if (event.key === " ") {
     console.log("The space key was pressed!");
-    window.location.href = "drawme.html";
+    window.location.href = "draw.html";
   }
 });

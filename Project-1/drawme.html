@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Have fun</title>
+    <!-- link to css-->
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <!-- link to main script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
+    <!-- dragging -->
+    <script type="module">
+      import { createDraggable } from "https://esm.sh/animejs";
+
+      window.addEventListener("DOMContentLoaded", () => {
+        createDraggable(".drawingApp", {
+          trigger: ".bluebarDrag",
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <main>
+      <div class="vertFlex">
+        <div class="bluebar">
+          <p class="dsFont whiteFont">Cat button</p>
+          <img src="/media/cross_small.png" alt="" />
+        </div>
+        <div class="bb">
+          <div class="buttonContainer" id="displayContainer">
+            <div class="catContainer" id="catbutton">
+              <img src="media/cat-default.png" id="neko" />
+
+              <p class="PM" id="instruction">Press me! :3</p>
+            </div>
+
+            <div class="cat-frame-div">
+              <img src="media/cat-frame.gif" class="cat-frame" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="drawingApp">
+        <p id="eraserInstruction">Press space bar for eraser</p>
+        <div class="drawingWrap">
+          <!--vert flex with 3 divs-->
+          <div class="bluebarDrag">
+            <p class="dsFont whiteFont">Untitled.psd</p>
+            <img src="/media/cross_small.png" alt="" />
+          </div>
+
+          <div class="drawingArea">
+            <!--middle part with horizontal flex-->
+            <div class="leftSide">
+              <!-- left side random buttons -->
+
+              <div id="iconsContainer">
+                <!-- icons -->
+                <div class="icons star"></div>
+                <div class="icons selection"></div>
+                <div class="icons eraser"></div>
+                <div class="icons bucket"></div>
+                <div class="icons pipette"></div>
+                <div class="icons zoom"></div>
+                <div class="icons pencil"></div>
+                <div class="icons brush"></div>
+                <div class="icons spray"></div>
+                <div class="icons text"></div>
+              </div>
+
+              <div id="brushPalette"><!-- brush palette --></div>
+            </div>
+            <div class="rightSide">
+              <!-- right side of middle part with vertical flex and canvas-->
+              <div id="canvasScroll">
+                <!-- canvas and scroll img -->
+                <div id="canvasContainer" style="width: 100%"></div>
+
+                <img src="/media/scrollbar1.png" alt="" class="scrollbar" />
+                <img src="/media/scrollbar2.png" alt="" class="scrollbar" />
+              </div>
+              <div class="paletteContainer">
+                <!-- color palette -->
+                <img src="/media/smile.png" alt="" id="smile" />
+                <div class="colorPalette" id="colorPalette"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bottomBlueBar" id="bottomBlueBar"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <script src="js/index.js"></script>
+  <script src="js/app.js"></script>
+</html>

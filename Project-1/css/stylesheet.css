@@ -1,0 +1,313 @@
+@font-face {
+  font-family: "DarumaDrop";
+  src: url("../fonts/DarumadropOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ds";
+  src: url("../fonts/Nintendo-DS-BIOS.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-image: url(/media/bg.png);
+  background-repeat: repeat;
+  background-color: #413c9d;
+}
+
+.dsFont {
+  font-family: "ds";
+  font-size: 20px;
+}
+
+.dsFont .bluefont {
+  color: #0121ca;
+}
+
+.paintButton {
+  padding: 10px 10px 10px 10px;
+}
+.whiteFont {
+  color: azure;
+}
+.bluebar {
+  display: flex;
+  align-items: center;
+  background-color: #0121ca;
+  padding: 10px 10px 10px 10px;
+  height: 20px;
+  border-style: double;
+  border-color: white;
+  justify-content: space-between;
+}
+
+.bluebarDrag {
+  display: flex;
+  align-items: center;
+  background-color: #0121ca;
+  padding: 10px 10px 10px 10px;
+  height: 20px;
+  border-style: double;
+  border-color: white;
+  justify-content: space-between;
+}
+.catContainer {
+  display: flex;
+  justify-content: center;
+  padding: 40px 40px 40px 40px;
+  border-width: 5px;
+}
+.vertFlex {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+.PM {
+  font-family: "ds";
+  font-size: 24px;
+  position: absolute;
+  top: 160px;
+  color: #fee3c6;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  height: 536px;
+  width: 100%;
+  align-content: end;
+  gap: 30px;
+  padding: 30px;
+  background-color: #0121ca;
+}
+
+.bb {
+  padding: 30px;
+  background-color: #fee3c6;
+}
+
+.buttonContainer {
+  display: flex;
+  width: fit-content;
+  align-items: end;
+  height: 433px;
+}
+#neko {
+  height: 200px;
+}
+.cat-frame-div {
+  position: relative;
+  height: 427px;
+}
+.cat-frame {
+  border-style: solid;
+  border-color: #fee3c6;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.colorBox {
+  aspect-ratio: 1 / 1;
+  border: none;
+  cursor: pointer;
+  image-rendering: pixelated;
+  height: 14.2px;
+}
+
+.colorBox:hover {
+  transform: scale(1.1);
+}
+
+.brushOption {
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+}
+.brushOption span {
+  display: block;
+  width: 50px;
+  background: #3b001f;
+  border-radius: 2px;
+}
+
+.brushOption:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.brushOption.active {
+  border: 1px solid #333;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+#brushPalette {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+.cat-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.drawingApp {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 2%;
+  left: 29%;
+  width: auto;
+  z-index: 3;
+  height: auto;
+  background-color: #fee3c6;
+}
+
+.bottomBlueBar {
+  align-content: center;
+  padding: 5px;
+  border-style: solid;
+  border-color: blue;
+  height: 50px;
+  margin: 5px;
+  border-width: 1px;
+  margin-top: 0px;
+}
+
+.drawingArea {
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+  padding: 17px;
+  justify-content: space-between;
+  gap: 10px;
+}
+.drawingWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 708px;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.paletteContainer {
+  height: 30px;
+  background-color: white;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+}
+
+#smile {
+  border-style: solid;
+  border-width: 1px;
+}
+#smile:hover {
+  transform: scale(1.1);
+}
+#canvasScroll {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  height: 94%;
+}
+
+.scrollbar {
+  height: auto;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+}
+
+.colorPalette {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(2, auto);
+  /*! height: 100%; */
+
+  border-style: solid;
+  border-width: 1px;
+}
+
+#iconsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.icons {
+  width: 20px;
+  height: 20px;
+  background-image: url("/media/tools-spaced.png");
+  background-repeat: no-repeat;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.star {
+  background-position: -14px -13px;
+}
+
+.selection {
+  background-position: -45px -13px;
+}
+.eraser {
+  background-position: -77px -13px;
+}
+.bucket {
+  background-position: -110px -13px;
+}
+.pipette {
+  background-position: -143px -13px;
+}
+.zoom {
+  background-position: -173px -13px;
+}
+.pencil {
+  background-position: -206px -13px;
+}
+.brush {
+  background-position: -238px -13px;
+}
+.spray {
+  background-position: -270px -13px;
+}
+.text {
+  background-position: -301px -13px;
+}
+
+#eraserInstruction {
+  position: absolute;
+  bottom: 27px;
+  right: 15px;
+  margin: 0;
+  color: blue;
+  font-size: 20px;
+  font-family: "ds", normal;
+}

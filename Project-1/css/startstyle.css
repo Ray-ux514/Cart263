@@ -1,0 +1,33 @@
+html,
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url(bg.png);
+  background-repeat: repeat;
+  background-color: #413c9d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.console {
+  position: relative;
+  max-width: 90vw;
+  will-change: transform;
+  transition: transform 0.08s linear;
+}
+
+.console img {
+  width: 100%;
+  display: block;
+}
+
+.screen video {
+  width: 97%;
+  height: 97%;
+  object-fit: cover;
+  display: block;
+  z-index: -1;
+}

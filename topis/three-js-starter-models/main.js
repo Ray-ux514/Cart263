@@ -37,6 +37,8 @@ scene.add(camera);
 // controls
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
+//duck
+let gltfDuck = null;
 
 //renderer
 const renderer = new THREE.WebGLRenderer({
@@ -59,33 +61,44 @@ const gltfLoader = new GLTFLoader();
 let gltfModel = null;
 try {
   gltfModel = await gltfLoader.loadAsync("model/Fox/glTF/Fox.gltf");
-  console.log(gltfModel);
-  addAndRun(gltfModel);
+  gltfDuck = await gltfLoader.loadAsync("model/Duck/glTF/Duck.gltf");
+  //   console.log(gltfModel);
+  //   addAndRun(gltfModel);
+
+  let objs = [];
+  objs.push(gltfModel);
+  objs.push(gltfDuck);
+  addAndRun(objs);
 } catch (error) {
   console.log(error.message);
 }
 
-// window.requestAnimationFrame(animate);
+window.requestAnimationFrame(animate);
+function addAndRun(loadedObjsArray) {
+  let foxModel = loadedObjsArray[0].scene.children[0];
+  let duckModel = loadedObjsArray[1].scene.children[0];
 
-// function animate() {
-//   // Update controls
-//   controls.update();
-//   // Render
-//   renderer.render(scene, camera);
-//   window.requestAnimationFrame(animate);
-// }
-function addAndRun(loadedObj) {
-  console.log(loadedObj);
-  let foxModel = loadedObj.scene.children[0];
-  scene.add(foxModel);
   foxModel.scale.set(0.015, 0.015, 0.015);
-  window.requestAnimationFrame(animate);
 
-  function animate() {
-    // Update controls
-    controls.update();
-    // Render
-    renderer.render(scene, camera);
-    window.requestAnimationFrame(animate);
-  }
+  console.log(duckModel.scale);
+  //set scale
+  duckModel.scale.x -= 0.005;
+  duckModel.scale.y -= 0.005;
+  duckModel.scale.z -= 0.005;
+
+  //set pos
+  duckModel.position.x = 1;
+  foxModel.position.z = -5;
+
+  scene.add(foxModel);
+  scene.add(duckModel);
+}
+function animate() {
+  // Update controls
+  controls.update();
+  // Render
+  renderer.render(scene, camera);
+  foxModel.position.z += 0.01;
+
+  window.requestAnimationFrame(animate);
 }

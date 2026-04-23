@@ -1,7 +1,5 @@
 window.onload = setup;
 
-
-
 function setup() {
   //displaying time at bottom of canvas
   let bottomCanvas = document.getElementById("bottomBlueBar");
@@ -234,45 +232,65 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-
 //app icons interactions
 
-let startButton = document.querySelector("#startButton")
-let catAppIcon = document.querySelector("#catAppGroup")
-let drawAppIcon = document.querySelector("#ArtAppGroup")
-let musicAppIcon = document.querySelector("#musicAppGroup")
+let startButton = document.querySelector("#startButton");
+let catAppIcon = document.querySelector("#catAppGroup");
+let drawAppIcon = document.querySelector("#ArtAppGroup");
+let musicAppIcon = document.querySelector("#musicAppGroup");
 
-musicAppIcon.addEventListener("dblclick", musicOpen)
-startButton.addEventListener("mouseover", startHover)
-startButton.addEventListener("mouseout", startOut)
-catAppIcon.addEventListener("dblclick", catOpen)
-drawAppIcon.addEventListener("dblclick", drawOpen)
+musicAppIcon.addEventListener("dblclick", musicOpen);
+startButton.addEventListener("mouseover", startHover);
+startButton.addEventListener("mouseout", startOut);
+catAppIcon.addEventListener("dblclick", catOpen);
+drawAppIcon.addEventListener("dblclick", drawOpen);
 
-function startHover(){
-    startButton.style.backgroundPosition = "0px 30px"
-    console.log("mouse hovered")
+function startHover() {
+  startButton.style.backgroundPosition = "0px 30px";
+  console.log("mouse hovered");
 }
 
-function startOut(){
-    startButton.style.backgroundPosition = "0px 0px"
-    console.log("mouse out")
+function startOut() {
+  startButton.style.backgroundPosition = "0px 0px";
+  console.log("mouse out");
+}
+// CLOSE BUTTONS
+
+// cat app close
+const catClose = document.querySelector("#vertFlex .bluebar img");
+
+catClose.addEventListener("click", function () {
+  document.getElementById("vertFlex").style.display = "none";
+});
+
+// drawing app close
+const drawClose = document.querySelector("#drawingApp .bluebarDrag img");
+
+drawClose.addEventListener("click", function () {
+  document.getElementById("drawingApp").style.display = "none";
+});
+
+// music player close
+const musicClose = document.querySelector("#mp3Player .mp3BlueBar img");
+
+musicClose.addEventListener("click", function () {
+  document.getElementById("mp3Player").style.display = "none";
+});
+function catOpen() {
+  let catApp = document.getElementById("vertFlex");
+  console.log("double clicked");
+  catApp.style.display = "flex";
 }
 
-function catOpen(){
-    let catApp = document.getElementById("vertFlex")
-    console.log("double clicked")
-    catApp.style.display = "flex"
+function drawOpen() {
+  let drawApp = document.getElementById("drawingApp");
+  console.log("art app is open");
+  drawApp.style.display = "flex";
+
+  setupDrawing();
 }
 
-function drawOpen(){
-    let drawApp = document.getElementById("drawingApp")
-    console.log("art app is open")
-    drawApp.style.display = "flex"
-
-    setupDrawing();
-}
-
-function musicOpen(){
-  let mp3Player = document.getElementById("mp3Player")
-  mp3Player.style.display = "flex"
+function musicOpen() {
+  let mp3Player = document.getElementById("mp3Player");
+  mp3Player.style.display = "flex";
 }

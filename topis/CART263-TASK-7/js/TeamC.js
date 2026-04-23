@@ -102,6 +102,8 @@ export class PlanetC {
   }
 
   click(mouse, scene, camera) {
+    this.raycaster.setFromCamera(mouse, camera);
+
     //TODO: Do the raycasting here.
   }
 }

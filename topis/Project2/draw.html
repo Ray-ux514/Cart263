@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>Have fun</title>
+    <!-- link to css-->
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <!-- link to main script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
+    <!-- dragging -->
+    <script type="module">
+      import { createDraggable } from "https://esm.sh/animejs";
+
+      window.addEventListener("DOMContentLoaded", () => {
+        createDraggable(".drawingApp",  {
+          trigger: ".bluebarDrag",
+        });
+        createDraggable(".vertFlex", {
+          trigger: ".bluebar"
+        })
+        createDraggable("#mp3Player", {
+          trigger: ".mp3BlueBar"
+        })
+      });
+
+      
+    </script>
+  </head>
+  <body>
+    <main>
+      <div id="taskbar"> <!-- taskbar -->
+        <div id="startButton">
+
+        </div>
+      </div> 
+
+      <div class="appGroup"> <!-- app icons -->
+
+        <div class="catApp" id="catAppGroup">
+          <img src="media/catapp.png" id="AppIcon">
+          <p>gif engine</p>
+        </div>
+
+          <div class="artApp" id="ArtAppGroup">
+            <img src="media/artapp.png" id="AppIcon">
+            <p>draw.exe</p>
+          </div>
+
+          <div class="artApp" id="musicAppGroup">
+            <img src="media/musicApp.png" id="AppIcon">
+            <p>music player</p>
+          </div>
+      </div>  
+
+      <div id="mp3Player"> <!-- mp3 player -->
+
+        <div class="mp3BlueBar">
+          <p class="dsFont whiteFont">MP3 player</p>
+          <img src="media/cross_small.png" alt="">
+        </div>
+
+        <div class="playCover">
+            <div id="playlist">
+              <div class="trackInfo"> <!-- track information -->
+                <p class="dsFont">#</p>
+                <p class="dsFont">Title</p> 
+                <img src="media/duration.png" alt="" id="duration">
+              </div>
+
+             <!--  tracks -->
+               <div class="trackholder">
+               
+
+               </div>
+
+
+            </div>
+            <!-- cover art -->
+            <div id="coverContainer">
+              <img src="" id="coverArt" alt="" class="coverArt">
+              
+            </div>
+
+        </div>
+        <!-- slider range -->
+        <input type="range" id="playhead" min="0" max="100" value="0">
+        <!-- play controls -->
+         <div class="controls">
+          
+          <img src="/media/control buttons/06 previous.png" alt="" id="previous">
+          <img src="/media/control buttons/07 play.png" alt="" id="play">
+          <img src="/media/control buttons/08 next.png" alt="" id="next">
+          <img src="/media/control buttons/loop.png" alt="" id="loop">
+
+         </div>
+
+      </div>
+
+      <div class="vertFlex" id="vertFlex"> <!-- cat gif engine -->
+        <div class="bluebar">
+          <p class="dsFont whiteFont">Cat button</p>
+          <img src="media/cross_small.png" alt="" />
+        </div>
+        <div class="bb">
+          <div class="buttonContainer" id="displayContainer">
+            <div class="catContainer" id="catbutton">
+              <img src="media/cat-default.png" id="neko" />
+
+              <p class="PM" id="instruction">Press me! :3</p>
+            </div>
+
+            <div class="cat-frame-div">
+              <img src="media/cat-frame.gif" class="cat-frame" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="drawingApp" id="drawingApp">
+        <p id="eraserInstruction">Press space bar for eraser</p>
+        <div class="drawingWrap">
+          <!--vert flex with 3 divs-->
+          <div class="bluebarDrag">
+            <p class="dsFont whiteFont">Untitled.psd</p>
+            <img src="media/cross_small.png" alt="x" />
+          </div>
+
+          <div class="drawingArea">
+            <!--middle part with horizontal flex-->
+            <div class="leftSide">
+              <!-- left side random buttons -->
+
+              <div id="iconsContainer">
+                <!-- icons -->
+                <div class="icons star"></div>
+                <div class="icons selection"></div>
+                <div class="icons eraser"></div>
+                <div class="icons bucket"></div>
+                <div class="icons pipette"></div>
+                <div class="icons zoom"></div>
+                <div class="icons pencil"></div>
+                <div class="icons brush"></div>
+                <div class="icons spray"></div>
+                <div class="icons text"></div>
+              </div>
+
+              <div id="brushPalette"><!-- brush palette --></div>
+            </div>
+            <div class="rightSide">
+              <!-- right side of middle part with vertical flex and canvas-->
+              <div id="canvasScroll">
+                <!-- canvas and scroll img -->
+                <div id="canvasContainer" style="width: 100%"></div>
+
+                <img src="media/scrollbar1.png" alt="" class="scrollbar" />
+                <img src="media/scrollbar2.png" alt="" class="scrollbar" />
+              </div>
+              <div class="paletteContainer">
+                <!-- color palette -->
+                <img src="media/smile.png" alt="" id="smile" />
+                <div class="colorPalette" id="colorPalette"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bottomBlueBar" id="bottomBlueBar"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <script src="js/index.js"></script>
+  <script src="js/music-player.js"></script>
+  <script src="js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+</html>

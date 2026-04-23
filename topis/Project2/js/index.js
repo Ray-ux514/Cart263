@@ -269,7 +269,8 @@ const drawClose = document.querySelector("#drawingApp .bluebarDrag img");
 drawClose.addEventListener("click", function () {
   document.getElementById("drawingApp").style.display = "none";
 });
-//camera app
+
+//camera
 cameraAppIcon.addEventListener("dblclick", cameraOpen);
 
 // music player close
@@ -300,6 +301,8 @@ function cameraOpen() {
   let cameraWindow = document.getElementById("cameraWindow");
   cameraWindow.style.display = "flex";
 }
+
+//camera//
 const cameraClose = document.getElementById("cameraClose");
 const cameraWindow = document.getElementById("cameraWindow");
 const startCameraBtn = document.getElementById("startCamera");

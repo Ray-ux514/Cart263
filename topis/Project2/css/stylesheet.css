@@ -484,3 +484,40 @@ canvas {
   font-size: 20px;
   font-family: "ds", normal;
 }
+
+.cameraWindow {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 120px;
+  left: 300px;
+  width: 420px;
+  background: #ead5b8;
+  border: 2px solid #6c63ff;
+}
+
+.cameraBlueBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0121ca;
+  padding: 8px 12px;
+}
+
+.cameraContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+}
+
+#cameraVideo,
+#photoResult {
+  width: 100%;
+  background: black;
+}
+
+.cameraButtons {
+  display: flex;
+  gap: 10px;
+}

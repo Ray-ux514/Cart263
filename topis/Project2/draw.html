@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
     <title>Have fun</title>
     <!-- link to css-->
     <link rel="stylesheet" href="css/stylesheet.css" />
@@ -13,91 +12,94 @@
       import { createDraggable } from "https://esm.sh/animejs";
 
       window.addEventListener("DOMContentLoaded", () => {
-        createDraggable(".drawingApp",  {
+        createDraggable(".drawingApp", {
           trigger: ".bluebarDrag",
         });
         createDraggable(".vertFlex", {
-          trigger: ".bluebar"
-        })
+          trigger: ".bluebar",
+        });
         createDraggable("#mp3Player", {
-          trigger: ".mp3BlueBar"
-        })
+          trigger: ".mp3BlueBar",
+        });
+        createDraggacreateDraggable("#cameraWindow", {
+          trigger: ".cameraBlueBar",
+        });
+        ble9;
       });
-
-      
     </script>
   </head>
   <body>
     <main>
-      <div id="taskbar"> <!-- taskbar -->
-        <div id="startButton">
+      <div id="taskbar">
+        <!-- taskbar -->
+        <div id="startButton"></div>
+      </div>
 
-        </div>
-      </div> 
-
-      <div class="appGroup"> <!-- app icons -->
+      <div class="appGroup">
+        <!-- app icons -->
 
         <div class="catApp" id="catAppGroup">
-          <img src="media/catapp.png" id="AppIcon">
+          <img src="media/catapp.png" id="AppIcon" />
           <p>gif engine</p>
         </div>
 
-          <div class="artApp" id="ArtAppGroup">
-            <img src="media/artapp.png" id="AppIcon">
-            <p>draw.exe</p>
-          </div>
+        <div class="artApp" id="ArtAppGroup">
+          <img src="media/artapp.png" id="AppIcon" />
+          <p>draw.exe</p>
+        </div>
 
-          <div class="artApp" id="musicAppGroup">
-            <img src="media/musicApp.png" id="AppIcon">
-            <p>music player</p>
-          </div>
-      </div>  
+        <div class="artApp" id="musicAppGroup">
+          <img src="media/musicApp.png" id="AppIcon" />
+          <p>music player</p>
+        </div>
+        <div class="cameraApp" id="cameraAppGroup">
+          <img src="media/camera.png" id="AppIcon" />
+          <p>camera</p>
+        </div>
+      </div>
 
-      <div id="mp3Player"> <!-- mp3 player -->
+      <div id="mp3Player">
+        <!-- mp3 player -->
 
         <div class="mp3BlueBar">
           <p class="dsFont whiteFont">MP3 player</p>
-          <img src="media/cross_small.png" alt="">
+          <img src="media/cross_small.png" alt="" />
         </div>
 
         <div class="playCover">
-            <div id="playlist">
-              <div class="trackInfo"> <!-- track information -->
-                <p class="dsFont">#</p>
-                <p class="dsFont">Title</p> 
-                <img src="media/duration.png" alt="" id="duration">
-              </div>
-
-             <!--  tracks -->
-               <div class="trackholder">
-               
-
-               </div>
-
-
-            </div>
-            <!-- cover art -->
-            <div id="coverContainer">
-              <img src="" id="coverArt" alt="" class="coverArt">
-              
+          <div id="playlist">
+            <div class="trackInfo">
+              <!-- track information -->
+              <p class="dsFont">#</p>
+              <p class="dsFont">Title</p>
+              <img src="media/duration.png" alt="" id="duration" />
             </div>
 
+            <!--  tracks -->
+            <div class="trackholder"></div>
+          </div>
+          <!-- cover art -->
+          <div id="coverContainer">
+            <img src="" id="coverArt" alt="" class="coverArt" />
+          </div>
         </div>
         <!-- slider range -->
-        <input type="range" id="playhead" min="0" max="100" value="0">
+        <input type="range" id="playhead" min="0" max="100" value="0" />
         <!-- play controls -->
-         <div class="controls">
-          
-          <img src="/media/control buttons/06 previous.png" alt="" id="previous">
-          <img src="/media/control buttons/07 play.png" alt="" id="play">
-          <img src="/media/control buttons/08 next.png" alt="" id="next">
-          <img src="/media/control buttons/loop.png" alt="" id="loop">
-
-         </div>
-
+        <div class="controls">
+          <img
+            src="/media/control buttons/06 previous.png"
+            alt=""
+            id="previous"
+          />
+          <img src="/media/control buttons/07 play.png" alt="" id="play" />
+          <img src="/media/control buttons/08 next.png" alt="" id="next" />
+          <img src="/media/control buttons/loop.png" alt="" id="loop" />
+        </div>
       </div>
 
-      <div class="vertFlex" id="vertFlex"> <!-- cat gif engine -->
+      <div class="vertFlex" id="vertFlex">
+        <!-- cat gif engine -->
         <div class="bluebar">
           <p class="dsFont whiteFont">Cat button</p>
           <img src="media/cross_small.png" alt="" />
@@ -114,6 +116,25 @@
               <img src="media/cat-frame.gif" class="cat-frame" />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div id="cameraWindow" class="cameraWindow">
+        <div class="cameraBlueBar">
+          <p class="dsFont whiteFont">Camera</p>
+          <img src="media/cross_small.png" alt="close" id="cameraClose" />
+        </div>
+
+        <div class="cameraContent">
+          <video id="cameraVideo" autoplay playsinline></video>
+          <canvas id="cameraCanvas" style="display: none"></canvas>
+
+          <div class="cameraButtons">
+            <button id="startCamera">Start Camera</button>
+            <button id="snapPhoto">Take Picture</button>
+          </div>
+
+          <img id="photoResult" alt="snapshot" />
         </div>
       </div>
 

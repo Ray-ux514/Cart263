@@ -5,24 +5,24 @@
   font-style: normal;
   font-display: swap;
 }
-.coverArt{
+.coverArt {
   width: 100%;
   height: 100%;
 }
-.controls{
+.controls {
   display: flex;
   flex-direction: row;
   gap: 15px;
   justify-content: center;
 }
 
-#playhead{
+#playhead {
   margin: 20px;
   appearance: none;
   background-color: transparent;
   margin-bottom: 10px;
 }
-#playhead::-webkit-slider-thumb{
+#playhead::-webkit-slider-thumb {
   border-radius: 0px;
   appearance: none;
   width: 15px;
@@ -32,7 +32,7 @@
   border-color: black;
 }
 
-#playhead::-moz-range-thumb{
+#playhead::-moz-range-thumb {
   border-radius: 0px;
   appearance: none;
   width: 15px;
@@ -42,68 +42,66 @@
   border-color: black;
 }
 
-#playhead::-webkit-slider-runnable-track{
-  background-color: #0176D0;
+#playhead::-webkit-slider-runnable-track {
+  background-color: #0176d0;
 }
 #playhead::-moz-range-track {
-  background-color: #0176D0;
+  background-color: #0176d0;
   height: 4px;
 }
 
-.trackholder{
+.trackholder {
   padding: 0px 20px 0px 20px;
- 
 }
-.track{
-  align-items: center;  
+.track {
+  align-items: center;
   display: grid;
-  grid-template-columns: 10% 84% 5%;  
+  grid-template-columns: 10% 84% 5%;
   height: 40px;
   border-bottom: black;
   border-bottom-width: 1px;
   border-bottom-style: solid;
 }
-.track:hover{
+.track:hover {
   background-color: #4f2f1742;
-  transition: .3s;
+  transition: 0.3s;
 }
-.track:active *{
+.track:active * {
   transform: scale(0.95);
-  transition: .1s;
+  transition: 0.1s;
 }
-#duration{
+#duration {
   height: 15px;
 }
-.trackInfo{
+.trackInfo {
   background-color: #fee3c6;
   position: sticky;
   top: 0;
   align-items: center;
-  
+
   display: grid;
-  grid-template-columns: 10% 84% 5%;  
+  grid-template-columns: 10% 84% 5%;
   height: 40px;
   border-bottom: black;
   border-bottom-width: 1px;
   border-bottom-style: solid;
   margin-left: 20px;
   margin-right: 20px;
-  
 }
-.playCover{
+.playCover {
   padding: 20px;
   display: flex;
   flex-direction: row;
   gap: 20px;
 }
-#mp3Player{
+#mp3Player {
   display: none;
   flex-direction: column;
   background-color: #fee3c6;
   height: 500px;
   width: 800px;
 }
-#playlist{
+#playlist {
   overflow: scroll;
   border-style: solid;
   border-color: black;
@@ -118,7 +116,7 @@
   display: none;
 }
 
-#coverContainer{
+#coverContainer {
   border-style: solid;
   border-color: black;
   border-width: 1px;
@@ -126,9 +124,7 @@
   width: 45%;
 }
 
-
-
-.mp3BlueBar{
+.mp3BlueBar {
   display: flex;
   align-items: center;
   background-color: #0121ca;
@@ -139,37 +135,35 @@
   justify-content: space-between;
 }
 
-#drawingApp{
+#drawingApp {
   display: none;
 }
-.catApp{
-
+.catApp {
   display: flex;
   flex-direction: column;
   gap: 0px;
   align-items: center;
 }
-.artApp{
-  
+.artApp {
   display: flex;
   flex-direction: column;
   gap: 0px;
   align-items: center;
 }
 
-.appGroup{
+.appGroup {
   position: fixed;
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
 
-#AppIcon{
+#AppIcon {
   width: 70px;
   height: 70px;
 }
 
-p{
+p {
   margin: 0px;
   font-family: "ds";
 }
@@ -253,8 +247,6 @@ body {
   top: 160px;
   color: #fee3c6;
 }
-
-
 
 .buttonContainer {
   display: flex;
